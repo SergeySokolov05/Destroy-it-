@@ -21,6 +21,22 @@ public class BulletManager : MonoBehaviour
         set => _isShotStart = value;
     }
     public Bullet Bullet => _bullet;
+
+    public int CountBullet
+    {
+        get
+        {
+            var tempCountBullet = 0;
+
+            for (var i = 0; i < _listBulleds.Count; i++)
+            {
+                if (_listBulleds[i] != null)
+                    tempCountBullet++;
+            }
+
+            return tempCountBullet;
+        }
+    }
     
     private void Start()
     {

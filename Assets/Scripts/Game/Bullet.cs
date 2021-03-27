@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Zone"))
         {
             Destroy(gameObject);
-            GameManager.instance.UiManager.CalculateCountBullet(true, GameManager.instance.Gun.CountBullet);
+            GameManager.instance.UiManager.CalculateCountBullet(true, GameManager.instance.BulletManager.CountBullet - 1);
         }
     }
 }

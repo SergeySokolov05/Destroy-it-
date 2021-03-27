@@ -13,8 +13,6 @@ public class Gun : MonoBehaviour
     private Animator _animator;
     private bool _isHitTarget;
     
-    public int CountBullet => zone.GetCountBullet();
-    
     private void Start()
     {
         _boxCollider = GetComponent<BoxCollider>();

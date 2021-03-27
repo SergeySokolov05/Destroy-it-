@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     
     public UIManager UiManager => uiManager;
     public BulletManager BulletManager => bulletManager;
-    public Gun Gun => gun;
 
     private void Awake()
     {
@@ -28,7 +27,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         bulletManager.StartGame();
-        uiManager.CalculateCountBullet(true, gun.CountBullet);
+        uiManager.CalculateCountBullet(true, bulletManager.CountBullet);
         cameraManager.SetStartPosition();
         gun.RepeatShot();
     }
@@ -52,7 +51,7 @@ public class GameManager : MonoBehaviour
         bulletManager.IsShotStart = false;
         cameraManager.SetNextPosition();
         uiManager.OpenForgeGun(false);
-        uiManager.CalculateCountBullet(true, gun.CountBullet);
+        uiManager.CalculateCountBullet(true, bulletManager.CountBullet);
         gun.RepeatShot();
     }
 
